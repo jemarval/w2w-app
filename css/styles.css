@@ -92,6 +92,11 @@ header {
     margin-top: 2rem;
 }
 
+.providers-wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
 #find {
     margin:3rem auto;
     width: 80%;
