@@ -44,8 +44,15 @@ video {
     --clr-cta-main: hsl(348, 87%, 27%);
 }
 
-h2 {
+h1 {
+    color: #FFF478;
     font-size: 2rem;
+    font-weight: 900;
+    padding-left: 0.5rem;
+}
+
+h2 {
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 1rem;
@@ -53,16 +60,56 @@ h2 {
 
 p {
     line-height: 1.4;
-    font-size: 0.825;
+    font-size: 0.925rem;
     text-align: justify;
 }
 
+.row-flex {
+    display: flex;
+    gap: 1rem;
+}
+
+/* header */
+
+header {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid var(--clr-background);
+}
+
+/* Settings */
+
+#settings {
+    width: 90%;
+    margin: auto;
+    color: white;
+}
+
+.setting {
+    margin-top: 2rem;
+}
+
+#find {
+    margin:3rem auto;
+    width: 80%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--clr-background);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+/* Cards */
+
 .card {
-    /* display: none; */
+    display: none;
     width: 90%;
     max-width: 25rem;
     overflow: hidden;
-    margin: 5rem auto;
+    margin: 1rem auto;
     /* outline: auto; */
 }
 
@@ -104,8 +151,8 @@ p {
 }
 
 .poster img {
-    aspect-ratio: 1/1.1;
-    object-fit: cover;
+    aspect-ratio: 1/1.5;
+    object-fit:cover;
     width: 100%;
     border-radius: 1rem;
 }
@@ -118,4 +165,64 @@ p {
     position: relative;
     top: -2.5rem;
     z-index: -1;
+}
+#settings-button {
+    display:none;
+    position: fixed;
+    margin: 1rem;
+    color: white;
+    z-index: 100;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.5;
+
+
+}
+
+#next-button {
+    display:none;
+    position: fixed;
+    padding: 1rem;
+    color: white;
+    z-index: 100;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.5;
+
+
+}
+
+@media only screen and (min-width:48rem){
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-template-rows: auto 1fr;
+        gap: 0.5rem;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0;
+    }
+
+    .poster img {
+        aspect-ratio: 1/1.4;
+    }
+
+    .overview {
+        height: 17rem;
+    }
+
+    .overview-details {
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    
 }

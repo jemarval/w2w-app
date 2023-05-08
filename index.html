@@ -12,18 +12,185 @@
     <title>What2Watch</title>
 </head>
 <body>
-    <div class="card">
-        <div class="poster"><img id="poster1"  alt="">
-        <div class="rating">
-            <span class="rating-number" id="rating1"></span>
+    <header>
+        <img src="/img/popcorn_logo.svg" alt="">
+        <h1>What2Watch</h1>
+    </header>
+    <div id="settings">
+        
+        <div  class="setting" id="movie-or-series">
+            <h2>What do you want to watch?</h2>
+            <div class="row-flex">
+                <div>
+                    <input type="radio" name="movie-or-series" id="movie" value="movie"  checked>
+                <label for="movie">Movie</label>
+                </div>
+                <div>
+                    <input type="radio" name="movie-or-series" id="series" value="tv">
+                <label for="movie">Tv series</label>
+                </div>
+            </div>
         </div>
-        <div class="provider" id="provider1"></div>
+        <div  class="setting" id="subscribed-provider">
+            <h2>What are you subscribed to?</h2>
+            <div>
+                <div>
+                    <input type="checkbox" name="netflix" id="netflix" value="%7C8"  checked>
+                <label for="netflix">Netflix</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="amazon" id="amazon" value="%7C119"  checked>
+                <label for="amazon">Amazon Prime</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="disney" id="disney" value="%7C337"  checked>
+                <label for="disney">Disney Plus</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="hbo" id="hbo" value="%7C384"  checked>
+                <label for="hbo">HBO Max</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="directv" id="directv" value="%7C467"  checked>
+                <label for="directv">Directv GO</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="pluto" id="pluto" value="%7C300"  checked>
+                <label for="pluto">PlutoTV</label>
+                </div>
+                
+            </div>
         </div>
-        <div class="overview">
-            <h2 id="title1">aa</h2>
-            <p id="overview1"></p>
-        </div>        
+        <div  class="setting" id="sort-by">
+            <h2>Sort them by</h2>
+            <div class="row-flex">
+                <div>
+                    <input type="radio" name="sort-by" id="popularity-desc" value="&sort_by=popularity.desc"  checked>
+                <label for="popularity-desc">Most Popular</label>
+                </div>
+                <div>
+                    <input type="radio" name="sort-by" id="vote-average" value="&sort_by=vote_average.desc">
+                <label for="vote-average">Best Rated</label>
+                </div>
+                <div>
+                    <input type="radio" name="sort-by" id="release-date" value="&sort_by=release_date.desc">
+                <label for="release-date">Newest</label>
+                </div>
+            </div>
+        </div>
+
+        <div  class="setting" id="minimum-rating">
+            <h2>With a rating of at least</h2>
+            <div class="row-flex">
+                <div>
+                    <input type="radio" name="minimum-rating" id="sixandup" value="&vote_average.gte=6"  checked>
+                <label for="sixandup">6</label>
+                </div>
+                <div>
+                    <input type="radio" name="minimum-rating" id="sevenandup" value="&vote_average.gte=7">
+                <label for="sevenandup">7</label>
+                </div>
+                <div>
+                    <input type="radio" name="minimum-rating" id="eightandup" value="&vote_average.gte=8">
+                <label for="eightandup">8</label>
+                </div>
+                <div>
+                    <input type="radio" name="minimum-rating" id="anyrating" value="">
+                <label for="anyrating">Any rating</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="setting" id="not-older-than">
+            <h2>Not older than</h2>
+            <div class="row-flex">
+                
+                <div>
+                    <input type="radio" name="not-older-than" id="1990" value="&primary_release_date.gte=1990-01-01">
+                <label for="1990">1990</label>
+                </div>
+                <div>
+                    <input type="radio" name="not-older-than" id="2000" value="&primary_release_date.gte=2000-01-01">
+                <label for="2000">2000</label>
+                </div>
+                <div>
+                    <input type="radio" name="not-older-than" id="2010" value="&primary_release_date.gte=2010-01-01">
+                <label for="2010">2010</label>
+                </div>
+                <div>
+                    <input type="radio" name="not-older-than" id="2020" value="&primary_release_date.gte=2020-01-01">
+                <label for="2020">2020</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="not-older-than" id="anyage" value="" checked>
+                <label for="anyage">Any age</label>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="find">Find me something</div>
     </div>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="poster"><img id="poster1"  alt="">
+            <div class="rating">
+                <span class="rating-number" id="rating1"></span>
+            </div>
+            <div class="provider" id="provider1"></div>
+            </div>
+            <div class="overview">
+                <h2 id="title1">aa</h2>
+                <p class="overview-details" id="overview1"></p>
+            </div>        
+        </div>
+    
+        <div class="card">
+            <div class="poster"><img id="poster2"  alt="">
+            <div class="rating">
+                <span class="rating-number" id="rating2"></span>
+            </div>
+            <div class="provider" id="provider2"></div>
+            </div>
+            <div class="overview">
+                <h2 id="title2">aa</h2>
+                <p class="overview-details" id="overview2"></p>
+            </div>        
+        </div>
+    
+        <div class="card">
+            <div class="poster"><img id="poster3"  alt="">
+            <div class="rating">
+                <span class="rating-number" id="rating3"></span>
+            </div>
+            <div class="provider" id="provider3"></div>
+            </div>
+            <div class="overview">
+                <h2 id="title3">aa</h2>
+                <p class="overview-details" id="overview3"></p>
+            </div>        
+        </div>
+    
+        <div class="card">
+            <div class="poster"><img id="poster4"  alt="">
+            <div class="rating">
+                <span class="rating-number" id="rating4"></span>
+            </div>
+            <div class="provider" id="provider4"></div>
+            </div>
+            <div class="overview">
+                <h2 id="title4">aa</h2>
+                <p class="overview-details" id="overview4"></p>
+            </div>        
+        </div>
+    </div>
+    
+    <div id="settings-button"><img src="/img/settings.svg" alt=""></div>
+    <div id="next-button"><img src="/img/next-page.svg" alt=""></div>
 
     <script src="/scripts/scripts.js"></script>
 </body>
