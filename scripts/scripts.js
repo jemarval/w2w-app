@@ -41,9 +41,10 @@ movie1rating.textContent = "uu" */
 
 /* Get Provider Function */
  /* Function to get provider of specific movie by id. In this Example: Wakanda Forever id=505642 */
- const getProvider = async (movieId) => {
+
+ const getProvider = async (type, id) => {
     try {
-        let response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=91240b71863b5bfeb50df48a1fc46e53`)
+        let response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/watch/providers?api_key=91240b71863b5bfeb50df48a1fc46e53`)
     if(response.ok){
         let jsonResponse = await response.json();
         let provider = jsonResponse.results.CL.flatrate[0].provider_name;
@@ -81,9 +82,9 @@ const discoverMovie = async () => {
    console.log(urlToFetch);
 
    
-
-/*    let testurl = "https://api.themoviedb.org/3/discover/movie?api_key=91240b71863b5bfeb50df48a1fc46e53&language=en-US&sort_by=popularity.desc&vote_count.gte=200&vote_average.gte=6&primary_release_date.gte=2000-01-01&page=1&with_watch_providers=%7C8%7C119%7C337%7C384%7C467%7C300&watch_region=CL"; */
-
+/*    showType = 'tv';
+   let testUrl = `https://api.themoviedb.org/3/discover/${showType}?api_key=91240b71863b5bfeb50df48a1fc46e53&language=en-US&sort_by=popularity.desc&vote_count.gte=200&vote_average.gte=6&primary_release_date.gte=2000-01-01&page=1&with_watch_providers=%7C8%7C119%7C337%7C384%7C467%7C300&watch_region=CL`;
+ */
    try {
     let response = await fetch(urlToFetch);
     if(response.ok){
@@ -97,9 +98,13 @@ const discoverMovie = async () => {
         
         poster1.src = poster1path;
         rating1.textContent = movies[movieIndex1].vote_average;
-        title1.textContent = movies[movieIndex1].original_title;
+        if (showType === 'movie') {
+            title1.textContent = movies[movieIndex1].original_title;
+        } else {
+            title1.textContent = movies[movieIndex1].name;
+        }
         overview1.textContent = movies[movieIndex1].overview;
-        provider1.textContent = await getProvider(id1);
+        provider1.textContent = await getProvider(`${showType}`,id1);
 
         /* Set 2nd Card */
         let poster2path = `https://image.tmdb.org/t/p/original${movies[movieIndex2].poster_path}`;
@@ -107,9 +112,13 @@ const discoverMovie = async () => {
         
         poster2.src = poster2path;
         rating2.textContent = movies[movieIndex2].vote_average;
-        title2.textContent = movies[movieIndex2].original_title;
+        if (showType === 'movie') {
+            title2.textContent = movies[movieIndex2].original_title;
+        } else {
+            title2.textContent = movies[movieIndex2].name;
+        }
         overview2.textContent = movies[movieIndex2].overview;
-        provider2.textContent = await getProvider(id2);
+        provider2.textContent = await getProvider(`${showType}`,id2);
 
         /* Set 3rd Card */
         let poster3path = `https://image.tmdb.org/t/p/original${movies[movieIndex3].poster_path}`;
@@ -117,9 +126,13 @@ const discoverMovie = async () => {
         
         poster3.src = poster3path;
         rating3.textContent = movies[movieIndex3].vote_average;
-        title3.textContent = movies[movieIndex3].original_title;
+        if (showType === 'movie') {
+            title3.textContent = movies[movieIndex3].original_title;
+        } else {
+            title3.textContent = movies[movieIndex3].name;
+        }
         overview3.textContent = movies[movieIndex3].overview;
-        provider3.textContent = await getProvider(id3);
+        provider3.textContent = await getProvider(`${showType}`,id3);
 
         /* Set 4th Card */
         let poster4path = `https://image.tmdb.org/t/p/original${movies[movieIndex4].poster_path}`;
@@ -127,9 +140,13 @@ const discoverMovie = async () => {
         
         poster4.src = poster4path;
         rating4.textContent = movies[movieIndex4].vote_average;
-        title4.textContent = movies[movieIndex4].original_title;
+        if (showType === 'movie') {
+            title4.textContent = movies[movieIndex4].original_title;
+        } else {
+            title4.textContent = movies[movieIndex4].name;
+        }
         overview4.textContent = movies[movieIndex4].overview;
-        provider4.textContent = await getProvider(id4);
+        provider4.textContent = await getProvider(`${showType}`, id4);
 
 
     }
@@ -141,8 +158,10 @@ const discoverMovie = async () => {
 
 };
 
+/* discoverMovie(); */
 
-let testProvider = getProvider(744276);
+
+let testProvider = getProvider('tv', 100088);
 testProvider.then(data => console.log(data))
 
 
