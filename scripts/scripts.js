@@ -82,10 +82,10 @@ const discoverMovie = async () => {
 
    
 
-   let testurl = "https://api.themoviedb.org/3/discover/movie?api_key=91240b71863b5bfeb50df48a1fc46e53&language=en-US&sort_by=popularity.desc&vote_count.gte=200&vote_average.gte=6&primary_release_date.gte=2000-01-01&page=1&with_watch_providers=%7C8%7C119%7C337%7C384%7C467%7C300&watch_region=CL";
+/*    let testurl = "https://api.themoviedb.org/3/discover/movie?api_key=91240b71863b5bfeb50df48a1fc46e53&language=en-US&sort_by=popularity.desc&vote_count.gte=200&vote_average.gte=6&primary_release_date.gte=2000-01-01&page=1&with_watch_providers=%7C8%7C119%7C337%7C384%7C467%7C300&watch_region=CL"; */
 
    try {
-    let response = await fetch(testurl);
+    let response = await fetch(urlToFetch);
     if(response.ok){
         let jsonResponse = await response.json();
         let movies = jsonResponse.results;
@@ -141,7 +141,6 @@ const discoverMovie = async () => {
 
 };
 
-discoverMovie()
 
 let testProvider = getProvider(744276);
 testProvider.then(data => console.log(data))
@@ -219,7 +218,7 @@ findButton.addEventListener('click', () => {
     
 
     for (const card of cards) {
-        card.style.display = 'block'
+        card.style.display = 'flex'
     }
     discoverMovie()
     nextButton.style.display = 'block';

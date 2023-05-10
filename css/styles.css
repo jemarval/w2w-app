@@ -88,8 +88,6 @@ header {
     width: 90%;
     margin: auto;
     color: white;
-
-    display: none;
 }
 
 .setting {
@@ -115,12 +113,11 @@ header {
 
 .card {
     position: relative;
-    display: flex;
+    display: none;
     width: 95%;
     max-width: 25rem;
     overflow: hidden;
     margin: 1rem auto;
-    /* outline: auto; */
 }
 
 .poster {
