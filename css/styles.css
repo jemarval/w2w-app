@@ -56,6 +56,8 @@ h2 {
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 1rem;
+    max-width: 70%;
+    min-height: 2.5rem;
 }
 
 p {
@@ -86,6 +88,8 @@ header {
     width: 90%;
     margin: auto;
     color: white;
+
+    display: none;
 }
 
 .setting {
@@ -110,14 +114,85 @@ header {
 /* Cards */
 
 .card {
-    display: none;
-    width: 90%;
+    position: relative;
+    display: flex;
+    width: 95%;
     max-width: 25rem;
     overflow: hidden;
     margin: 1rem auto;
     /* outline: auto; */
 }
 
+.poster {
+    
+    /* position: relative; */
+    max-width: 32%;
+}
+
+.poster img {
+    aspect-ratio: 1/1.5;
+    object-fit:cover;
+    width: 100%;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.rating {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    right: 7px;
+    top: 7px;
+    background-color: white;
+    padding: 1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    color: white;
+    border: 2px dashed var(--clr-background);
+}
+
+.rating .rating-number {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: rgb(41, 41, 41);
+}
+
+.provider {
+    z-index: 20;
+    color: rgb(221, 221, 221);
+    font-size: .8rem;
+    position: absolute;
+    right: 20px;
+    bottom: -20px;
+}
+
+
+
+.overview {
+    padding: 0.7rem;
+    background-color: var(--clr-background);
+    color: rgb(233, 233, 233);
+    border-radius: 0 1rem 1rem 0;
+
+}
+
+.overview-details {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/*.card {
+    /* display: none; */
+    /* width: 90%;
+    max-width: 25rem;
+    overflow: hidden;
+    margin: 1rem auto;
+} */
+/* 
 .poster {
     
     position: relative;
@@ -171,6 +246,9 @@ header {
     top: -2.5rem;
     z-index: -1;
 }
+ */
+
+/* ----- */
 #settings-button {
     display:none;
     position: fixed;
